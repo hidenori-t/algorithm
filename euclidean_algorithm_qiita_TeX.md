@@ -72,3 +72,19 @@ $208 = 91 \begin{eqnarray}\pmod{117}\end{eqnarray}$
 1. 「割られる数 X」は2つ前の割り算の「あまり 変数R」の半分より必ず小さくなる. X<2つ前のR/2
 26<91/2
 よって,手順2を繰り返すごとに「あまり」は急速に(指数関数的に)小さくなっていき,最大公約数を非常に高速に特定することができる.
+
+***
+# 『難しそうなプログラミングをやさしく教えてくれる本』p.185 リスト1 ユークリッドの互除法を利用して最大公約数(Greatest Common Divisor, gcd)を計算する
+
+
+```python
+def gcd(a, b):
+    # return a if b == 0 else gcd(b, a % b)
+
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+print(gcd(342, 162))
+```
